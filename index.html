@@ -10,8 +10,12 @@
 
   <script>
   function getUserEmail() {
-  var input = document.getElementById('userEmail').value;
-  alert("Email saved! " + input);
+    var input = document.getElementById('userEmail').value;
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    alert("Email saved! " + input + "\n" + date + " " + time);
+
   }
   </script>
 
@@ -42,7 +46,7 @@
       <div class="row h-100">
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-12"><br>
-            <form id='nameForm' onsubmit="return false;">
+            <form id='nameForm' action="save-to-log.php" method="post" >
             <h1 class="mb-3" style="font-size:4em">Revney</h1>
             <h2 class="mb-3"style="font-size:1.5em">Revolutionize your Journey</h2><hr style="border-color:#ffffff">
             <p class="mb-6" style="font-size:2em">A new way to plan travel and maintain itineraries all on one platform. Coming to you
